@@ -160,7 +160,8 @@ class ModelBasedSimulator(UserSimulator):
         dis_idx = 0
 
         for iter_batch in range(num_batches):
-            for iter in range(len(self.training_examples) / (batch_size)):
+            # for iter in range(len(self.training_examples) / (batch_size)):
+            for iter in range(self.max_buffer_size / (batch_size)):
                 batch = [random.choice(self.training_examples) for i in xrange(batch_size)]
                 np_batch = []
                 for x in range(6):

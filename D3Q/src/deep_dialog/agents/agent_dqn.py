@@ -298,7 +298,8 @@ class AgentDQN(Agent):
         running_expereince_pool = self.experience_replay_pool + self.experience_replay_pool_from_model
 
         for iter in range(num_iter):
-            for _ in range(len(running_expereince_pool) / (batch_size)):
+            # for _ in range(len(running_expereince_pool) / (batch_size)):
+            for _ in range((self.max_world_model_buffer_size+self.max_user_buffer_size) / (batch_size)):
 
                 batch = [random.choice(running_expereince_pool) for i in xrange(batch_size)]
                 np_batch = []

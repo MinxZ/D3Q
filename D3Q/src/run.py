@@ -781,7 +781,7 @@ def run_episodes(count, status):
             if episode >= 0:
                 agent.predict_mode = False
                 user_sim_planning.predict_mode = False
-                simulation_res = simulation_epoch(50)
+                simulation_res = simulation_epoch(5)
             else:
                 simulation_res = {}
                 simulation_res['success_rate'] = 0
